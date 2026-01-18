@@ -3,20 +3,373 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>Portfolio</title>
+    <title>Engineering Portfolio</title>
 </head>
 <body>
-    <div class="project-container">
-        <a href="img/project1.jpg" data-lightbox="project1" class="project-image"><img src="img/project1_thumbnail.jpg" alt="Project 1"></a>
-        <a href="img/project2.jpg" data-lightbox="project2" class="project-image"><img src="img/project2_thumbnail.jpg" alt="Project 2"></a>
-        <div class="pdf-container">
-            <button class="open-pdf" onclick="openPDF()">Open PDF</button>
-            <div class="embedded-viewer">
-                <embed src="docs/project.pdf" type="application/pdf" width="100%" height="600">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a class="nav-logo" href="#home">Portfolio</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#dissertation">Dissertation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero-content">
+            <p class="hero-greeting">Welcome</p>
+            <h1 class="hero-name">Engineering Portfolio</h1>
+            <h2 class="hero-title">Mechanical • Simulation • Design</h2>
+            <p class="hero-subtitle">
+                A curated selection of analysis, design, and research projects spanning marine,
+                mechanical, and assistive technologies.
+            </p>
+            <div class="hero-cta">
+                <a class="btn btn-primary" href="#projects">View Projects</a>
+                <a class="btn btn-secondary" href="assets/portfolio.pdf" target="_blank" rel="noopener">Download CV</a>
             </div>
         </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <p class="section-subtitle">Building reliable, data-driven engineering solutions.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        I focus on turning complex engineering challenges into practical designs and simulations.
+                    </p>
+                    <p>
+                        The portfolio highlights projects across finite element analysis, CFD, and product design,
+                        supported by automation, visualization, and experimental validation.
+                    </p>
+                    <p>
+                        Each project emphasizes clear outcomes, repeatable workflows, and measurable performance.
+                    </p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <span class="highlight-number">9</span>
+                        <span class="highlight-label">Featured Projects</span>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="highlight-number">20+</span>
+                        <span class="highlight-label">Engineering Tools</span>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="highlight-number">3</span>
+                        <span class="highlight-label">Research Domains</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <p class="section-subtitle">Selected industry and academic engagements.</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Industry Project</span>
+                        <h3>DNV Maritime</h3>
+                        <h4>Tank Mixture Dispersion CFD</h4>
+                        <p>Performed CFD analysis of methane dispersion for maritime tank venting systems.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Research Collaboration</span>
+                        <h3>Hyperloop Manchester</h3>
+                        <h4>Braking System Analysis</h4>
+                        <p>Modelled nonlinear braking components with thermal and fatigue assessments.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Academic Design</span>
+                        <h3>Assistive Technology</h3>
+                        <h4>VIMA Motion Assistant</h4>
+                        <p>Developed a haptic navigation handle with ultrasonic sensing and rapid prototyping.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">Click a project to explore technical highlights and tools.</p>
+            <div class="projects-grid">
+                <div class="project-card" data-project="fpso">
+                    <div class="project-image">
+                        <img src="assets/fpso_motion.gif" alt="FPSO Dynamic Response Analysis">
+                        <div class="project-overlay"><span class="view-project">View Project</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>FPSO Dynamic Response Analysis</h3>
+                        <p>Finite element response study of a floating production vessel.</p>
+                        <div class="project-tags">
+                            <span class="tag">CalculiX</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">MATLAB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-project="reactor">
+                    <div class="project-image">
+                        <img src="assets/stress_distribution.png" alt="Nuclear Reactor Graphite Analysis">
+                        <div class="project-overlay"><span class="view-project">View Project</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Nuclear Reactor Graphite Analysis</h3>
+                        <p>Coupled thermal-mechanical modelling of graphite moderator bricks.</p>
+                        <div class="project-tags">
+                            <span class="tag">CalculiX</span>
+                            <span class="tag">VTK</span>
+                            <span class="tag">Matplotlib</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-project="wing">
+                    <div class="project-image">
+                        <img src="assets/wing_preview.png" alt="Wing Parameter Discovery">
+                        <div class="project-overlay"><span class="view-project">View Project</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Wing Parameter Discovery</h3>
+                        <p>Symbolic regression for inverse aerodynamic wing design.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">PySR</span>
+                            <span class="tag">Plotly</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-project="vima">
+                    <div class="project-image">
+                        <img src="assets/vima_project.png" alt="VIMA Motion Assistant">
+                        <div class="project-overlay"><span class="view-project">View Project</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>VIMA Motion Assistant</h3>
+                        <p>Assistive handle providing haptic feedback for obstacle detection.</p>
+                        <div class="project-tags">
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">Arduino</span>
+                            <span class="tag">Sensors</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-project="knee_cpm">
+                    <div class="project-image">
+                        <img src="assets/knee_cpm_project.png" alt="Portable Knee CPM Device">
+                        <div class="project-overlay"><span class="view-project">View Project</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Portable Knee CPM Device</h3>
+                        <p>Lightweight rehabilitation device with optimized motion control.</p>
+                        <div class="project-tags">
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">Abaqus</span>
+                            <span class="tag">Mechatronics</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-project="tank_cfd">
+                    <div class="project-image">
+                        <img src="assets/dnv_cfd_project.png" alt="Tank Mixture Dispersion CFD">
+                        <div class="project-overlay"><span class="view-project">View Project</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Tank Mixture Dispersion CFD</h3>
+                        <p>Dispersion analysis for methane venting and safety assessment.</p>
+                        <div class="project-tags">
+                            <span class="tag">ANSYS Fluent</span>
+                            <span class="tag">CFD</span>
+                            <span class="tag">DNV</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-project="cii_dashboard">
+                    <div class="project-image">
+                        <img src="assets/cii_dashboard.png" alt="CII Rating Dashboard">
+                        <div class="project-overlay"><span class="view-project">View Project</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>CII Rating Dashboard</h3>
+                        <p>Carbon intensity calculator supporting maritime compliance reviews.</p>
+                        <div class="project-tags">
+                            <span class="tag">Excel</span>
+                            <span class="tag">IMO</span>
+                            <span class="tag">DNV</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-project="hose_device">
+                    <div class="project-image">
+                        <img src="assets/kerb_removal.png" alt="Firefighting Hose Device">
+                        <div class="project-overlay"><span class="view-project">View Project</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Firefighting Hose Device</h3>
+                        <p>Integrated kink removal and hose advancement solution.</p>
+                        <div class="project-tags">
+                            <span class="tag">CAD</span>
+                            <span class="tag">Prototyping</span>
+                            <span class="tag">Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-project="hyperloop">
+                    <div class="project-image">
+                        <img src="assets/hyperloop_braking.png" alt="Hyperloop Braking System">
+                        <div class="project-overlay"><span class="view-project">View Project</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Hyperloop Braking System</h3>
+                        <p>Nonlinear FEA and thermal analysis of braking components.</p>
+                        <div class="project-tags">
+                            <span class="tag">Abaqus</span>
+                            <span class="tag">FEA</span>
+                            <span class="tag">Thermal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <p class="section-subtitle">Core toolsets and engineering capabilities.</p>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon">🧮</div>
+                    <h3>Simulation & Analysis</h3>
+                    <ul class="skill-list">
+                        <li>CalculiX</li>
+                        <li>ANSYS Fluent</li>
+                        <li>Abaqus</li>
+                        <li>MATLAB</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">💻</div>
+                    <h3>Programming</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>Julia</li>
+                        <li>JavaScript</li>
+                        <li>Automation Scripting</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">📐</div>
+                    <h3>Design & CAD</h3>
+                    <ul class="skill-list">
+                        <li>SolidWorks</li>
+                        <li>3D Printing</li>
+                        <li>Prototyping</li>
+                        <li>Mechatronics</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon">📊</div>
+                    <h3>Data & Visualization</h3>
+                    <ul class="skill-list">
+                        <li>ParaView</li>
+                        <li>VTK</li>
+                        <li>Matplotlib</li>
+                        <li>Plotly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dissertation" class="dissertation">
+        <div class="container">
+            <h2 class="section-title">Dissertation</h2>
+            <p class="section-subtitle">Full thesis PDF with methodology and results.</p>
+            <div class="dissertation-content">
+                <div class="dissertation-info">
+                    <h3>Final Year Dissertation</h3>
+                    <p class="dissertation-meta">Simulation, Validation, Engineering Analysis</p>
+                    <p>Explore the dissertation in-browser or download the complete document.</p>
+                    <ul class="dissertation-highlights">
+                        <li>Structured methodology with repeatable simulation workflows.</li>
+                        <li>Detailed results and post-processing visualizations.</li>
+                        <li>Focus on real-world engineering constraints and validation.</li>
+                    </ul>
+                    <div class="dissertation-tags">
+                        <span class="tag">Simulation</span>
+                        <span class="tag">Research</span>
+                        <span class="tag">Validation</span>
+                    </div>
+                    <a class="btn btn-primary dissertation-download" href="assets/dissertation.pdf" target="_blank" rel="noopener">
+                        Download PDF
+                    </a>
+                </div>
+                <div class="dissertation-viewer">
+                    <iframe src="assets/dissertation.pdf" title="Dissertation PDF"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <p class="contact-text">
+                Connect through the portfolio resources below or explore the featured projects.
+            </p>
+            <div class="contact-links">
+                <a class="contact-link" href="https://github.com/Amruth2105" target="_blank" rel="noopener">
+                    <span class="contact-icon">💻</span>
+                    GitHub
+                </a>
+                <a class="contact-link" href="assets/portfolio.pdf" target="_blank" rel="noopener">
+                    <span class="contact-icon">📄</span>
+                    Resume PDF
+                </a>
+                <a class="contact-link" href="#projects">
+                    <span class="contact-icon">📌</span>
+                    Featured Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close project details">&times;</button>
+            <div class="modal-body"></div>
+        </div>
     </div>
+
+    <footer class="footer">
+        <p>© 2026 Engineering Portfolio. All rights reserved.</p>
+    </footer>
+
     <script src="app.js"></script>
 </body>
 </html>
