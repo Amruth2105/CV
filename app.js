@@ -143,7 +143,7 @@ class ProjectModal {
                 tools: ['CalculiX', 'Python', 'VTK', 'Matplotlib']
             },
             wing: {
-                title: 'AI Wing Inverse Design',
+                title: 'Wing Parameter Discovery',
                 image: 'assets/wing_preview.png',
                 description: 'Using symbolic regression (PySR) to discover the mathematical equations governing wing geometry from aerodynamic performance requirements.',
                 highlights: [
