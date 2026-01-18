@@ -879,9 +879,35 @@ section {
 }
 
 /* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .dissertation-content {
+        grid-template-columns: 1fr;
+    }
+
+    .dissertation-info {
+        position: static;
+    }
+
+    .dissertation-viewer {
+        height: 520px;
+    }
+}
+
 @media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
     .nav-links {
-        display: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
     }
 
     .about-content {
@@ -913,5 +939,56 @@ section {
 
     .timeline-dot {
         left: -37px;
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 70px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 12px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .contact-link {
+        width: 100%;
+        max-width: 340px;
+        justify-content: center;
+    }
+
+    .timeline {
+        padding-left: 24px;
+    }
+
+    .timeline-dot {
+        left: -31px;
+    }
+
+    .modal-body {
+        padding: 24px;
+    }
+
+    .dissertation-viewer {
+        height: 420px;
     }
 }
