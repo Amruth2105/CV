@@ -333,6 +333,41 @@ class NavbarEffect {
     }
 }
 
+// ===== Mobile Navigation Toggle =====
+class MobileNav {
+    constructor() {
+        this.toggle = document.querySelector('.nav-toggle');
+        this.navLinks = document.querySelector('.nav-links');
+        this.links = document.querySelectorAll('.nav-links a');
+        this.init();
+    }
+
+    init() {
+        if (!this.toggle || !this.navLinks) return;
+
+        this.toggle.addEventListener('click', () => {
+            this.toggle.classList.toggle('active');
+            this.navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        this.links.forEach(link => {
+            link.addEventListener('click', () => {
+                this.toggle.classList.remove('active');
+                this.navLinks.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!this.toggle.contains(e.target) && !this.navLinks.contains(e.target)) {
+                this.toggle.classList.remove('active');
+                this.navLinks.classList.remove('active');
+            }
+        });
+    }
+}
+
 // ===== Initialize Everything =====
 document.addEventListener('DOMContentLoaded', () => {
     new ParticleCanvas();
@@ -340,4 +375,5 @@ document.addEventListener('DOMContentLoaded', () => {
     new ProjectModal();
     new SmoothNav();
     new NavbarEffect();
+    new MobileNav();
 });
