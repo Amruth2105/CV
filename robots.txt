@@ -1,0 +1,6 @@
+# Robots.txt for Amruth Parakkunnath Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://amruth-parakkunnath.vercel.app/sitemap.xml
