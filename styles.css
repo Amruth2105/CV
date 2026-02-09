@@ -638,9 +638,6 @@ section {
     box-shadow: var(--shadow-glow);
 }
 
-.contact-icon {
-    font-size: 1.3rem;
-}
 
 /* ===== Modal ===== */
 .modal {
